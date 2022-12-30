@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+//Permite consumir el estado del STORE
+// import {useSelector, useDispatch} from 'react-redux'
+//Me traigo mi action creator 
+// import { setUser, unsetUser } from './reducers/user/userSlice';
+import {FormularioLogin}  from "./sections/formulario";
+import {Home}  from "./sections/home";
+import { Cart } from "./sections/cart";
 
+//Componetes de Router
+import {Routes, Route, Link} from 'react-router-dom'
 function App() {
+  // const dispatch= useDispatch()
+  //Este codigo me permite consumir lo que necesite de mi estado global!
+  // const {email} = useSelector(state=> state.user);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Link className="text-2xl font-bold mx-2" to='/'>Login</Link>
+      <Link className="text-2xl font-bold mx-2" to='/home'>Home</Link>
+      <Link className="text-2xl font-bold mx-2" to='/cart'>Cart</Link>
+      <Routes>
+        <Route path="/" element={<FormularioLogin />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
