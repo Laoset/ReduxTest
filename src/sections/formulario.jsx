@@ -41,21 +41,19 @@ export const FormularioLogin = ()=>{
       })
     }
     return(
-        <div className="grid justify-center">
-            <div className="grid-cols-6">
-                <h2 className="mb-4">FORMULARIO LOGIN</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label className="">Email address</label>
-                        <input type="email" className="bg-gray-600" ref={emailField} />
+            <div className="flex justify-center items-center h-screen pb-56">
+                <form onSubmit={handleSubmit} className=" w-[30rem] h-[26rem] rounded-xl mt-0 p-16  bg-black text-white">
+                    <h2 className="w-full pb-6 flex justify-center text-4xl font-semibold">FORMULARIO LOGIN</h2>
+                    {/* <div className="flex flex-col items-baseline mb-3 "> */}
+                        {/* <label className="">Email address</label> */}
+                        <input placeholder='Email' type="email" className="text-black flex justify-center my-6 mx-auto  p-2  bg-white mb-6 rounded-md w-[80%] h-12" ref={emailField} />
+                        {/* <label className="">Password</label> */}
+                        <input placeholder='Password' type="password" className="text-black flex justify-center my-8 mx-auto  p-2  bg-white mb-6 rounded-md w-[80%] h-12" ref={passwordField}/>
+                    {/* </div> */}
+                    <div className="flex justify-center items-center bg-gray-500 rounded-md mt-10">
+                        <button type="submit" className="py-3 px-5 text-md font-bold  text-white">Submit</button>
                     </div>
-                    <div className="mb-3">
-                        <label className="">Password</label>
-                        <input type="password" className="bg-gray-600" ref={passwordField} />
-                    </div>
-                    <button type="submit" className="">Submit</button>
                 </form>
             </div>
-        </div>
     )
 }

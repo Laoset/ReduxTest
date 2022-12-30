@@ -23,27 +23,31 @@ export const ProductsList= ({products}) => {
     }
 
     return (
-        <>
-        <h2>Listado de productos</h2>
-        <div className="row">
+        <div className='h-screen pt-12'>
+        <h2 className='py-10 px-4 text-white'>Listado de productos</h2>
+        <div className="grid grid-cols-6 mx-4 gap-8 px-6">
           {
             products.map(product => {
               return (
-                <div key={product.id} className="col-3 mt-3">
-                  <h4>{product.name}</h4>
-                  <p><b>Price:</b> {product.price}</p>
-                  <p><b>Category:</b> {product.category}</p>
-                  <button
-                    className={`${productsList.find(pdt=> pdt.id === product.id) ? 'bg-red-700': 'bg-green-600'}`}
-                    onClick={() => handlerRemove(product.id)}
-                  >
-                   {productsList.find(pdt=> pdt.id === product.id) ? 'Remove': 'Add'} to Cart
-                  </button>
+                <div key={product.id} className=" flex flex-col justify-center items-center border-gray-100 border-solid border-2 w-full h-52">
+                  <div className='h-28'>
+                    <h4 className='text-white'>{product.name}</h4>
+                    <p className='text-white py-1'><b className='font-normal'>Price: $</b>{product.price}</p>
+                    <p className='text-white'><b className='font-normal'>Category:</b> {product.category}</p>
+                  </div>
+                  <div className=''>
+                    <button
+                      className={`${productsList.find(pdt=> pdt.id === product.id) ? 'bg-red-700': 'bg-green-600'} text-white rounded-md p-1`}
+                      onClick={() => handlerRemove(product.id)}
+                    >
+                     {productsList.find(pdt=> pdt.id === product.id) ? 'Remove': 'Add'} to Cart
+                    </button>
+                    </div>
                 </div>
               )
             })
           }
         </div>
-      </>
+      </div>
     )
 }

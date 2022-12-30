@@ -3,26 +3,30 @@
 //Me traigo mi action creator 
 // import { setUser, unsetUser } from './reducers/user/userSlice';
 import {FormularioLogin}  from "./sections/formulario";
-import {Home}  from "./sections/home";
+import {NavBar}  from "./sections/home";
 import { Cart } from "./sections/cart";
 
 //Componetes de Router
-import {Routes, Route, Link} from 'react-router-dom'
+import {Routes, Route, useLocation} from 'react-router-dom'
+import TrueHome from "./sections/trueHome";
+
+
 function App() {
+  const location = useLocation();
   // const dispatch= useDispatch()
   //Este codigo me permite consumir lo que necesite de mi estado global!
   // const {email} = useSelector(state=> state.user);
   return (
     <div>
-      <Link className="text-2xl font-bold mx-2" to='/'>Login</Link>
-      <Link className="text-2xl font-bold mx-2" to='/home'>Home</Link>
-      <Link className="text-2xl font-bold mx-2" to='/cart'>Cart</Link>
+      <div>
+        {location.pathname === '/'? null : <NavBar/> }
+      </div>
       <Routes>
         <Route path="/" element={<FormularioLogin />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<TrueHome />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-    </div>
+    </div> 
   );
 }
 
