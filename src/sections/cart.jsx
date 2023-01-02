@@ -4,27 +4,33 @@ import { removeProductFromCart } from '../reducers/cart/cartSlice';
 export const Cart = () => {
   const dispatch = useDispatch();
   //De aca saco todo los products
-  const { productsList } = useSelector(state => state.cart);
+  const { productsList, totalCount } = useSelector(state => state.cart);
     //Para eliminar dispacho mi action remove con su ID correspondiente
   const handleRemoveProduct = (productId) => dispatch(removeProductFromCart(productId));
 
   return (
-        <div className='m-[10%] border-black border-solid border-2 rounded-md'>
+        <div className='my-28 mx-auto w-[50%] border-black border-solid border-2 rounded-md'>
+          <div className='flex justify-around items-center h-12'>Tu carrito hasta ahora : </div>
+          <div>
            {productsList.map(product => {
-            return (
-              <div className='p-2 my-4 mx-4 flex flex-col justify-center items-center border-gray-300 border-solid border-2 rounded-lg gap-8' key={product.id}>
-                <div>
-                  <div className='hidden '>{product.id}</div>
-                  <div >Producto: {product.name}</div>
-                  <div >Precio: {product.price}</div>
-                  <div >Categoria: {product.category}</div>
+             return (
+               <div className='flex items-center pt-4 pl-4 pb-2 text-base font-bold mt-4 ml-[2%] border-solid border-2 ' key={product.id}>
+                <div className='w-24 h-auto border-black border-solid border-2 rounded-md mr-12'>Image product</div>
+                   {/* <div className='hidden '>{product.id}</div> */}
+                   <div className='w-[25%] mr-20'>{product.name}</div>
+                   <div className='w-[25%] mr-28'>${product.price}</div>
+                   <div className='w-[25%]'>
+                     <button className="btn btn-danger bg-red-600 rounded-md p-1" onClick={() => handleRemoveProduct(product.id)}>Delete</button>
+                   </div>
+                   
                 </div>
-                <div >
-                  <button className="btn btn-danger bg-red-600 rounded-md p-1" onClick={() => handleRemoveProduct(product.id)}>Delete</button>
-                </div>
-              </div>
             )
           })}
+          </div>
+          <div>
+            <p>Cantidad de productos :</p>
+            <p>{totalCount}</p>
+          </div>
         </div>
   )
 }

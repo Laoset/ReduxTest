@@ -1,22 +1,16 @@
 //Si quiero leer el STORE necesito :
 import { useSelector,useDispatch } from "react-redux"
 import { unsetUser } from "../reducers/user/userSlice"
-import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { useState } from "react"
-//Componentes
+import { useNavigate, useLocation } from 'react-router-dom'
 
 
 export const NavBar = () => {
     const user = useSelector(state=>state.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    //Creando mi estado
-    const [goto, setGoto] = useState(null)
-    const handleGoto = ()=>{
-        setGoto(goto === 'home' ? 'carrito': 'home')
-    }
+
     const current = useLocation()
- console.log(current)
+    console.log(current)
     //Mi funcion de deslogeo
     const handleLogout = ()=>{
         dispatch(unsetUser());
