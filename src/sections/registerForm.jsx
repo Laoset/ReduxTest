@@ -1,8 +1,6 @@
 import  Axios  from 'axios';
 import React,{useState} from 'react'
 
-
-
 export const RegisterForm = (props) => {
 
     const [data, setData] = useState({
@@ -14,7 +12,7 @@ export const RegisterForm = (props) => {
 
     function handleSubmitRegister (e)  {
         e.preventDefault();
-        Axios.post("https://frail-bass-handbag.cyclic.app/users",{
+        Axios.post("https://api-to-vercel-olive.vercel.app/api/usuarios",{
             first_name: data.first_name,
             last_name: data.last_name,
             email : data.email,
