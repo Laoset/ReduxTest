@@ -18,7 +18,6 @@ export const FormularioLogin = (props)=>{
     //PETICION API
     const handleSubmit = evento=>{
         evento.preventDefault();
-        //"https://frail-bass-handbag.cyclic.app/users"
         Axios.get("https://api-to-vercel-olive.vercel.app/api/usuarios")
             .then(response => {
             //Esta constante me trae todos los usuarios de mi API
@@ -27,7 +26,6 @@ export const FormularioLogin = (props)=>{
             //aca busco el usuario que necesito si es que coincide su mail con mi data
             const userValidEmail = users.find(user => user.email === emailField.current.value);
             const userValidPassword = users.find(user => user.password === passwordField.current.value);
-            console.log(userValidEmail)
             //Si tengo usuario entonces entro   
             if (userValidEmail && userValidPassword) {
                 //Si coincide mi password con lo que tengo actualmente en el input, ingreso
