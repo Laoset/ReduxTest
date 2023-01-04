@@ -8,9 +8,9 @@ export const TrueHome = () => {
         const [products, setProducts]= useState([])
         //Agregar algo, hacer algo cuando se cargue
         useEffect(()=> {
-            Axios.get("https://frail-bass-handbag.cyclic.app/products")
+            Axios.get("https://api-to-vercel-olive.vercel.app/api/products")
                 .then(response=>{
-                    setProducts(response.data)
+                    setProducts(response.data.products)
                 })
         }, [])
   return (
