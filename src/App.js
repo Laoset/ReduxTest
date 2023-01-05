@@ -2,13 +2,13 @@
 // import {useSelector, useDispatch} from 'react-redux'
 //Me traigo mi action creator 
 // import { setUser, unsetUser } from './reducers/user/userSlice';
-import {FormularioLogin}  from "./sections/formulario";
-import {NavBar}  from "./sections/home";
+import {FormularioLogin}  from "./sections/loginForm";
+import {NavBar}  from "./sections/navBar";
 import { Cart } from "./sections/cart";
 
 //Componetes de Router
 import {Routes, Route, useLocation} from 'react-router-dom'
-import TrueHome from "./sections/trueHome";
+import TrueHome from "./sections/displayProducts";
 import { useState } from "react";
 import RegisterForm from "./sections/registerForm";
 

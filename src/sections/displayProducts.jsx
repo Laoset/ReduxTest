@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import { ProductsList } from '../components/productslist'
 import Axios from "axios"
 
-export const TrueHome = () => {
+export const TrueHome = ({setOpenModal}) => {
         //Creando mi estado
         const [products, setProducts]= useState([])
         //Agregar algo, hacer algo cuando se cargue
@@ -13,6 +13,9 @@ export const TrueHome = () => {
                     setProducts(response.data)
                 })
         }, [])
+
+        
+
   return (
     <div className='bg-fondo'>
           <ProductsList products={products}/>
