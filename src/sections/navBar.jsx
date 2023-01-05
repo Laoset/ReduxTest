@@ -10,10 +10,9 @@ export const NavBar = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     //MODAL ADD PRODUCT
-    const [openModal, setOpenModal] = useState(false)
+    const [openModal, setOpenModal] = useState(false);
     //
     const current = useLocation()
-    console.log(current)
     //Mi funcion de deslogeo
     const handleLogout = ()=>{
         dispatch(unsetUser());
