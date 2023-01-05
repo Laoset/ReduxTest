@@ -24,12 +24,12 @@ const ModalCreateProducts = ({closeModal},{products}) => {
               })
     })
 }
-  // function handle(e){
-  //   const newProduct = {...product};
-  //   newProduct[e.target.id]= e.target.value;
-  //   setProduct(newProduct)
-  //   console.log(newProduct)
-  // }
+  function handle(e){
+    const newProduct = {...product};
+    newProduct[e.target.id]= e.target.value;
+    setProduct(newProduct)
+    console.log(newProduct)
+  }
 
   return (
     <>
@@ -43,17 +43,17 @@ const ModalCreateProducts = ({closeModal},{products}) => {
             </div>
           <div className='flex flex-col justify-center text-lg '>
             <div className='w-3/4 mb-6'>
-              <input value={product.name}  type="text" placeholder='NAME :' id='name' className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
+              <input value={product.name} onChange={(e)=> handle(e)} type="text" placeholder='NAME :' id='name' className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
             </div>
             <div className='w-3/4 mb-6'>
-              <input value={product.price}  type="number" placeholder='PRICE :' id='price' className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
+              <input value={product.price} onChange={(e)=> handle(e)} type="number" placeholder='PRICE :' id='price' className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
             </div>
             <div className='w-3/4'>
-              <input value={product.category} type="text" placeholder='CATEGORY:' id='category' required className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
+              <input value={product.category} onChange={(e)=> handle(e)} type="text" placeholder='CATEGORY:' id='category' required className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
             </div>
           </div>
           <div className='flex justify-center items-center'>
-            <button className='m-10 border-none text-2xl cursor-pointer rounded px-4 py-2 text-black font-semibold  bg-green-400'>Agregar</button>
+            <button type='submit' className='m-10 border-none text-2xl cursor-pointer rounded px-4 py-2 text-black font-semibold  bg-green-400'>Agregar</button>
           </div>
         </div>
       </div>
