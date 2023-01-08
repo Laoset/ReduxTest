@@ -1,36 +1,5 @@
-import React, { useState } from 'react'
-import  Axios from 'axios';
-
-const ModalCreateProducts = ({closeModal},{products}) => {
-
-//   const [product, setProduct] = useState({
-//         name: '',
-//         price: '',
-//         category: ''
-//   })
-
-//   function handleSubmitRegister (e)  {
-//     e.preventDefault();
-//     Axios.post("https://api-to-vercel-olive.vercel.app/api/productos",{
-//         name: product.name,
-//         price: product.price,
-//         category : product.category,
-//     })
-//     .then(res => {
-//         console.log(res.data)
-//           Axios.get("https://api-to-vercel-olive.vercel.app/api/productos")
-//               .then(response=>{
-//                   console.log(response.data)
-//               })
-//     })
-// }
-//   function handle(e){
-//     const newProduct = {...product};
-//     newProduct[e.target.id]= e.target.value;
-//     setProduct(newProduct)
-//     console.log(newProduct)
-//   }
-
+import React from "react"
+const ModalCreateProducts = ({closeModal}) => {
   return (
     <>
     <form >
@@ -64,10 +33,3 @@ const ModalCreateProducts = ({closeModal},{products}) => {
 }
 
 export default ModalCreateProducts
-// //onChange={(e)=> handle(e)}
-// onChange={(e)=> handle(e)}
-// onChange={(e)=> handle(e)}
-//onSubmit={(e) => handleSubmitRegister(e)}
-//value={product.name}
-//value={product.category}
-//value={product.price} 
