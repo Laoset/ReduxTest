@@ -56,7 +56,6 @@ export const RegisterForm = (props) => {
           </div>
         </div>
         </form>
-        {/* <button onClick={() => props.onFormSwitch('login')} className="text-black underline cursor-pointer">Have account? Login here</button>   */}
         </>
   )
 }

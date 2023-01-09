@@ -16,7 +16,6 @@ export const Cart = () => {
              return (
                <div className='flex items-center pt-4 pl-4 pb-2 text-base font-bold mt-4 ml-[2%] border-solid border-2 ' key={product.id}>
                 <div className='w-24 h-auto border-black border-solid border-2 rounded-md mr-12'>Image product</div>
-                   {/* <div className='hidden '>{product.id}</div> */}
                    <div className='w-[25%] mr-20'>{product.name}</div>
                    <div className='w-[25%] mr-28'>${product.price}</div>
                    <div className='w-[25%]'>
