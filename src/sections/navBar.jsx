@@ -31,14 +31,16 @@ export const NavBar = () => {
     return(
         <div className='flex flex-col bg-black absolute w-full top-0'>
             <div className='flex justify-between items-center w-full h-14 px-4'>
-              <h2 className='text-white text-4xl font-bold mr-64'>Home</h2>
-              <p className='text-white mx-96'>Welcome {user.fullName} - {user.email}</p>
-              <div className='flex ml-6 gap-4'>
-                <button onClick={handleToCart} className='text-white bg-orange-600 rounded-md p-1'>{current.pathname === '/home'? 'Carrito' : 'Home'}</button>
-                <button className="btn btn-primary text-white bg-orange-600 rounded-md p-1" onClick={handleLogout}>Log out</button>
+                <div className="flex justify-center  items-center">
+                    <h2 className='text-white text-4xl font-bold mr-64'>Shooping Cart</h2>
+                    <p className='text-white mx-96'>Welcome {user.fullName} - {user.email}</p>
+                </div>
+                <div className='flex ml-6 gap-4'>
+                    <button onClick={handleToCart} className='text-white bg-orange-600 rounded-md p-1'>{current.pathname === '/home'? 'Carrito' : 'Home'}</button>
+                    <button className="btn btn-primary text-white bg-orange-600 rounded-md p-1" onClick={handleLogout}>Log out</button>
                 {/* <button className="btn btn-primary text-white bg-orange-600 rounded-md p-1 transition-transform duration-500 " onClick={()=> {setOpenModal(true)}}>Add Products</button>
                 {openModal && <ModalCreateProducts closeModal={setOpenModal}/>} */}
-              </div>
+                </div>
               <hr />
             </div>
         </div>

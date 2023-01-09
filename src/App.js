@@ -16,6 +16,8 @@ function App() {
   const toggleForm = (formName) => {
     setCurrentForm(formName);
   }
+  
+
   return (
     <div>
       <div>
