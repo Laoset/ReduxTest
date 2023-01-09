@@ -18,11 +18,11 @@ const ModalCreateProducts = ({closeModal}) => {
               <input  type="number" placeholder='PRICE :' id='price' className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
             </div>
             <div className='w-3/4'>
-              <input   type="text" placeholder='CATEGORY:' id='category' required className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
+              <input type="text" placeholder='CATEGORY:' id='category' required className=" py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500"/>
             </div>
           </div>
           <div className='flex justify-center items-center'>
-            <button type='submit' className='m-10 border-none text-2xl cursor-pointer rounded px-4 py-2 text-black font-semibold  bg-green-400'>Agregar</button>
+            <button className='m-10 border-none text-2xl cursor-pointer rounded px-4 py-2 text-black font-semibold  bg-green-400'>Agregar</button>
           </div>
         </div>
       </div>

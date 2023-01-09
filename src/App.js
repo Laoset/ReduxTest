@@ -1,7 +1,3 @@
-//Permite consumir el estado del STORE
-// import {useSelector, useDispatch} from 'react-redux'
-//Me traigo mi action creator 
-// import { setUser, unsetUser } from './reducers/user/userSlice';
 import {FormularioLogin}  from "./sections/loginForm";
 import {NavBar}  from "./sections/navBar";
 import { Cart } from "./sections/cart";

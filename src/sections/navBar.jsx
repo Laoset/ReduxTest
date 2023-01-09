@@ -2,15 +2,15 @@
 import { useSelector,useDispatch } from "react-redux"
 import { unsetUser } from "../reducers/user/userSlice"
 import { useNavigate, useLocation } from 'react-router-dom'
-import { useState } from "react"
-import ModalCreateProducts from "./modalProducts"
+// import { useState } from "react"
+// import ModalCreateProducts from "./modalProducts"
 
 export const NavBar = () => {
     const user = useSelector(state=>state.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     //MODAL ADD PRODUCT
-    const [openModal, setOpenModal] = useState(false);
+    // const [openModal, setOpenModal] = useState(false);
     //
     const current = useLocation()
     //Mi funcion de deslogeo
@@ -36,8 +36,8 @@ export const NavBar = () => {
               <div className='flex ml-6 gap-4'>
                 <button onClick={handleToCart} className='text-white bg-orange-600 rounded-md p-1'>{current.pathname === '/home'? 'Carrito' : 'Home'}</button>
                 <button className="btn btn-primary text-white bg-orange-600 rounded-md p-1" onClick={handleLogout}>Log out</button>
-                <button className="btn btn-primary text-white bg-orange-600 rounded-md p-1 transition-transform duration-500 " onClick={()=> {setOpenModal(true)}}>Add Products</button>
-                {openModal && <ModalCreateProducts closeModal={setOpenModal}/>}
+                {/* <button className="btn btn-primary text-white bg-orange-600 rounded-md p-1 transition-transform duration-500 " onClick={()=> {setOpenModal(true)}}>Add Products</button>
+                {openModal && <ModalCreateProducts closeModal={setOpenModal}/>} */}
               </div>
               <hr />
             </div>
