@@ -104,7 +104,7 @@ export const NavBar = () => {
         <div className='bg-black fixed w-full top-0 '>
             <div className='flex items-center justify-around  w-full h-20 px-4'>
                 <div className="flex items-center">
-                    <h2 className='text-white text-4xl font-bold mr-64'>Shooping Cart</h2>
+                    <h2 className='text-white text-4xl font-bold mr-64'>Shopping Cart</h2>
                     <p className='text-white '>Bienvenid@ {user.fullName} - {user.email}</p>
                 </div>
                 <div className='flex gap-14 w-fit'>
