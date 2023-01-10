@@ -8,10 +8,7 @@ export const Cart = () => {
     //Para eliminar dispacho mi action remove con su ID correspondiente
   const handleRemoveProduct = (productId) => dispatch(removeProductFromCart(productId)); 
   //Creando un total price
-  const total= 0
-
-  let precioTotal = ()=>{
-  }
+  let totalPrice= 0
 
   return (
     <div className='h-screen pt-24 bg-fondoEpic'>
@@ -19,9 +16,10 @@ export const Cart = () => {
           <div className='flex justify-around items-center h-12'>Tu carrito hasta ahora : </div>
           <div>
            {productsList.map(product => {
+              totalPrice += product.price
              return (
-               <div className='flex items-center pt-4 pl-4 pb-2 text-base font-bold mt-4 ml-[2%] border-solid border-2 ' key={product.id}>
-                  <div className='w-24 h-auto mr-12'>
+               <div className='h-24 flex items-center pt-4 pl-4 pb-2 text-base font-bold mt-4 ml-[2%] border-solid border-2 ' key={product.id}>
+                  <div className='w-24 h-fit mr-12'>
                     <img src={product.image} alt="" />
                   </div>
                    <div className='w-[25%] mr-20'>{product.name}</div>
@@ -34,14 +32,14 @@ export const Cart = () => {
             )
           })}
           </div>
-          <div className='flex justify-between'>
-            <div>
-              <h2>Cantidad de productos :</h2>
+          <div className='flex justify-around'>
+            <div className='flex flex-row p-2 gap-1'>
+              <h2 className='font-semibold '>Cantidad de productos :</h2>
               <p>{totalCount}</p>
             </div>
-            <div>
-              <h2>Precio total</h2>
-              <p>{precioTotal}</p>
+            <div className='flex fles-row p-2 pr-2 gap-1'>
+              <h2 className='font-semibold' >Precio total : </h2>
+              <p>${totalPrice}</p>
             </div>
             
             
