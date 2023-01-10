@@ -49,26 +49,26 @@ export const FormularioLogin = (props)=>{
       })
     }
     return(
-        <>
+        <div className="bg-fondoNuevo">
+        <div className="absolute left-4 top-3 w-36 h-24m-0 p-0"><h1 className="font-bold text-5xl hover:animate-pulse hover:text-nuevoBoton text-nuevoBoton2 font-marca">#AKCS</h1></div>
         <form onSubmit={handleSubmit}>
             <div className="flex justify-center h-screen w-screen items-center">
-                
                 <div className="w-full md:w-1/2 flex flex-col items-center">
-                <h1 className="text-center text-2xl font-bold text-gray-600 mb-6">LOGIN</h1>
+                <h1 className="text-center text-3xl font-bold text-slate-50 mb-6">LOG IN</h1>
                   
                     <div className="w-3/4 mb-6">
-                      <input placeholder='Email' type="email" required='' className="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500" ref={emailField} />
+                      <input placeholder='admin@admin.com' type="email" required='' className="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500" ref={emailField} />
                    </div>
                    <div className="w-3/4 mb-6">
-                      <input placeholder='Password' required='' type="password" className="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500" ref={passwordField}/>
+                      <input placeholder='admin' required='' type="password" className="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500" ref={passwordField}/>
                    </div>
                    <div className='w-3/4 mt-4'>
-                      <button type="submit" className="py-4 bg-blue-400 w-full rounded text-blue-50 font-bold hover:bg-blue-700">LOGIN</button>
+                      <button type="submit" className="py-4 bg-blue-500 w-full rounded text-slate-200 font-bold hover:bg-blue-700">LOGIN</button>
                    </div>   
-                   <button onClick={()=> props.onFormSwitch('register')} className="text-black underline cursor-pointer">Don't have an account? Register here</button>          
+                   <button onClick={()=> props.onFormSwitch('register')} className="text-slate-300 underline cursor-pointer">Don't have an account? Register here</button>          
               </div>
             </div>
             </form>
-            </>
+            </div>
     )
 }

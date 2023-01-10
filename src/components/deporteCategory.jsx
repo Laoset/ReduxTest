@@ -1,28 +1,42 @@
-//Importando mis actions del CART
+import React from 'react'
+import {useState, useEffect} from 'react'
+import Axios from "axios"
 import {addProductToCart, removeProductFromCart} from '../reducers/cart/cartSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
+const DeporteCategory = () => {
+  const [products, setProducts]= useState([])
+  const dispatch = useDispatch()
+  //Leer mi estado global y ver que productos tengo en mi carro
+  const {productsList} = useSelector(state=> state.notes)
+  console.log(productsList)
 
-export const ProductsList= ({products}) => {
-    const dispatch = useDispatch()
-    //Leer mi estado global y ver que productos tengo en mi carro
-    const {productsList} = useSelector(state=> state.notes)
-    console.log(productsList)
+  const handlerRemove= (productId) => {
+      //Busco el producto que se necesita en mi array de products
+      const product= products.find(product => product.id === productId)
+      //Si el producto esta en el carro:
+      if (productsList.find(pdt => pdt.id === productId)) {
+          //Hago dispatch de mi action de remover
+          dispatch(removeProductFromCart(productId));
+        }        //Y lo despacho al store
+         else {
+          dispatch(addProductToCart(product));
+        }
+  }
 
-    const handlerRemove= (productId) => {
-        //Busco el producto que se necesita en mi array de products
-        const product= products.find(product => product.id === productId)
-        //Si el producto esta en el carro:
-        if (productsList.find(pdt => pdt.id === productId)) {
-            //Hago dispatch de mi action de remover
-            dispatch(removeProductFromCart(productId));
-          }        //Y lo despacho al store
-           else {
-            dispatch(addProductToCart(product));
-          }
-    }
-    return (
-        <div className='h-screen pt-28'>
+
+  useEffect(()=> {
+    Axios.get("https://api-to-vercel-olive.vercel.app/api/productos/category/Deportes")
+        .then(response=>{
+            const productos = response.data;
+            console.log(productos)
+            setProducts(response.data)
+            console.log(response.data)
+        })
+}, [])
+
+  return (
+    <div className='h-screen pt-24 bg-fondoEpic'>
         <div className="grid grid-cols-5 mx-4 gap-8 px-6 my-1">
           {
             products.map(product => {
@@ -50,5 +64,7 @@ export const ProductsList= ({products}) => {
           }
         </div>
       </div>
-    )
+  )
 }
+
+export default DeporteCategory

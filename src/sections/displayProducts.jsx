@@ -2,10 +2,15 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { ProductsList } from '../components/productslist'
 import Axios from "axios"
-
 export const TrueHome = () => {
         //Creando mi estado
         const [products, setProducts]= useState([])
+        //Estado para modificar en caso de electro
+        // const [productsElectro, setProductsElectro]= useState([])
+          //Traer cosas
+
+
+
         //Agregar algo, hacer algo cuando se cargue
         useEffect(()=> {
             Axios.get("https://api-to-vercel-olive.vercel.app/api/productos")
@@ -18,8 +23,8 @@ export const TrueHome = () => {
         }, [])
 
   return (
-    <div className='bg-fondo'>
-          <ProductsList products={products}/>
+    <div className='bg-fondoEpic'>
+      <ProductsList products={products}/>
     </div>
   )
 }
