@@ -1,50 +1,56 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { removeProductFromCart } from '../reducers/cart/cartSlice';
+import { useSelector, useDispatch } from "react-redux";
+import { removeProductFromCart } from "../reducers/cart/cartSlice";
 
 export const Cart = () => {
   const dispatch = useDispatch();
   //De aca saco todo los products
-  const { productsList, totalCount } = useSelector(state => state.notes);
-    //Para eliminar dispacho mi action remove con su ID correspondiente
-  const handleRemoveProduct = (productId) => dispatch(removeProductFromCart(productId)); 
+  const { productsList, totalCount } = useSelector((state) => state.notes);
+  //Para eliminar dispacho mi action remove con su ID correspondiente
+  const handleRemoveProduct = (productId) =>
+    dispatch(removeProductFromCart(productId));
   //Creando un total price
-  let totalPrice= 0
+  let totalPrice = 0;
 
   return (
-    <div className='h-screen pt-24 bg-fondoEpic'>
-        <div className='bg-white my-28 mx-auto w-[50%] border-black border-solid border-2 rounded-md'>
-          <div className='flex justify-around items-center h-12'>Tu carrito hasta ahora : </div>
-          <div>
-           {productsList.map(product => {
-              totalPrice += product.price
-             return (
-               <div className='h-24 flex items-center pt-4 pl-4 pb-2 text-base font-bold mt-4 ml-[2%] border-solid border-2 ' key={product.id}>
-                  <div className='w-24 h-fit mr-12'>
-                    <img src={product.image} alt="" />
-                  </div>
-                   <div className='w-[25%] mr-20'>{product.name}</div>
-                   <div className='w-[25%] mr-28'>${product.price}</div>
-                   <div className='w-[25%]'>
-                     <button className="btn btn-danger bg-red-600 rounded-md p-1" onClick={() => handleRemoveProduct(product.id)}>Delete</button>
-                   </div>
-                   
-                </div>
-            )
+    <div className="h-auto w-full flex justify-center p-2">
+      <div className="bg-white border-black border-solid border-2 rounded-md flex flex-col text-center lg:w-[50%]">
+        <p className="">Tu carrito hasta ahora :</p>
+        <div className="flex flex-col ">
+          {productsList.map((product) => {
+            totalPrice += product.price;
+            return (
+              <div
+                className="h-20 flex flex-row  font-bold border-solid border-2 w-full justify-around"
+                key={product.id}
+              >
+                <img
+                  src={product.image}
+                  alt=""
+                  className="xs:w-[25%] sm:w-[15%] lg:w-[5%]"
+                />
+                <p className="w-[25%] self-center">{product.name}</p>
+                <p className="w-[25%] self-center">${product.price}</p>
+                <button
+                  className="btn btn-danger bg-red-600 rounded-md p-1 self-center"
+                  onClick={() => handleRemoveProduct(product.id)}
+                >
+                  Quitar
+                </button>
+              </div>
+            );
           })}
+        </div>
+        <div className="flex justify-around">
+          <div className="flex flex-row p-2 gap-1">
+            <h2 className="font-semibold ">Cantidad de productos :</h2>
+            <p>{totalCount}</p>
           </div>
-          <div className='flex justify-around'>
-            <div className='flex flex-row p-2 gap-1'>
-              <h2 className='font-semibold '>Cantidad de productos :</h2>
-              <p>{totalCount}</p>
-            </div>
-            <div className='flex fles-row p-2 pr-2 gap-1'>
-              <h2 className='font-semibold' >Precio total : </h2>
-              <p>${totalPrice}</p>
-            </div>
-            
-            
+          <div className="flex fles-row p-2 pr-2 gap-1">
+            <h2 className="font-semibold">Precio total : </h2>
+            <p>${totalPrice}</p>
           </div>
-        </div> 
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
