@@ -24,50 +24,48 @@ export const ProductsList = ({ products }) => {
     }
   };
   return (
-    <div className="h-screen w-full">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {products.map((product) => {
-          return (
-            <div
-              key={product.id}
-              className="bg-white flex flex-col justify-center items-center border-gray-100 border-solid border-2 w-full h-60"
-            >
-              <div className="h-28 p-1 w-30">
-                <img
-                  className="h-28 w-40 rounded-md"
-                  src={product.image}
-                  alt=""
-                />
-              </div>
-              <div className="h-28 text-base pt-1">
-                <h4 className="text-black">{product.name}</h4>
-                <p className="text-black py-1">
-                  <b className="font-normal">Price: $</b>
-                  {product.price}
-                </p>
-                <p className="text-black">
-                  <b className="font-normal">Category:</b> {product.category}
-                </p>
-              </div>
-              <div className="p-1">
-                <button
-                  className={`${
-                    productsList.find((pdt) => pdt.id === product.id)
-                      ? "bg-red-700"
-                      : "bg-green-600"
-                  } text-white rounded-md p-1`}
-                  onClick={() => handlerRemove(product.id)}
-                >
-                  {productsList.find((pdt) => pdt.id === product.id)
-                    ? "Remove"
-                    : "Add"}{" "}
-                  to Cart
-                </button>
-              </div>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 lg:gap-6 h-full my-2">
+      {products.map((product) => {
+        return (
+          <div
+            key={product.id}
+            className="bg-white flex flex-col justify-center items-center border-gray-100 border-solid border-2 w-full h-72 rounded-lg hover:scale-110 duration-200"
+          >
+            <div className="h-32 p-1 w-30">
+              <img
+                className="h-28 w-40 rounded-md"
+                src={product.image}
+                alt=""
+              />
             </div>
-          );
-        })}
-      </div>
+            <div className="h-28 text-base pt-1">
+              <h4 className="text-black">{product.name}</h4>
+              <p className="text-black py-1">
+                <b className="font-normal">Price: $</b>
+                {product.price}
+              </p>
+              <p className="text-black">
+                <b className="font-normal">Category:</b> {product.category}
+              </p>
+            </div>
+            <div className="p-1">
+              <button
+                className={`${
+                  productsList.find((pdt) => pdt.id === product.id)
+                    ? "bg-red-700"
+                    : "bg-green-600"
+                } text-white rounded-md p-1 `}
+                onClick={() => handlerRemove(product.id)}
+              >
+                {productsList.find((pdt) => pdt.id === product.id)
+                  ? "Remove"
+                  : "Add"}{" "}
+                to Cart
+              </button>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

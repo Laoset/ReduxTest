@@ -12,35 +12,38 @@ export const Cart = () => {
   let totalPrice = 0;
 
   return (
-    <div className="h-auto w-full flex justify-center p-2">
-      <div className="bg-white border-black border-solid border-2 rounded-md flex flex-col text-center lg:w-[50%]">
+    <div className="h-auto w-full flex justify-center p-2 ">
+      <div className="bg-white  rounded-md flex flex-col text-center lg:w-[50%]">
         <p className="">Tu carrito hasta ahora :</p>
         <div className="flex flex-col ">
           {productsList.map((product) => {
             totalPrice += product.price;
             return (
-              <div
-                className="h-20 flex flex-row  font-bold border-solid border-2 w-full justify-around"
-                key={product.id}
-              >
-                <img
-                  src={product.image}
-                  alt=""
-                  className="xs:w-[25%] sm:w-[15%] lg:w-[5%]"
-                />
-                <p className="w-[25%] self-center">{product.name}</p>
-                <p className="w-[25%] self-center">${product.price}</p>
-                <button
-                  className="btn btn-danger bg-red-600 rounded-md p-1 self-center"
-                  onClick={() => handleRemoveProduct(product.id)}
+              <>
+                <div
+                  className=" h-24 flex flex-row  font-bold  w-full justify-around py-2"
+                  key={product.id}
                 >
-                  Quitar
-                </button>
-              </div>
+                  <img
+                    src={product.image}
+                    alt=""
+                    className="xs:w-[25%] sm:w-[15%] lg:w-[5%]"
+                  />
+                  <p className="w-[25%] self-center">{product.name}</p>
+                  <p className="w-[25%] self-center">${product.price}</p>
+                  <button
+                    className="btn btn-danger bg-red-600 rounded-md p-1 self-center"
+                    onClick={() => handleRemoveProduct(product.id)}
+                  >
+                    Quitar
+                  </button>
+                </div>
+                <hr />
+              </>
             );
           })}
         </div>
-        <div className="flex justify-around">
+        <div className="flex justify-around ">
           <div className="flex flex-row p-2 gap-1">
             <h2 className="font-semibold ">Cantidad de productos :</h2>
             <p>{totalCount}</p>

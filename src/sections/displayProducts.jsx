@@ -22,9 +22,9 @@ export const TrueHome = () => {
   }, []);
 
   return (
-    <div className="bg-fondoEpic ">
+    <section className="w-full h-full px-6 flex flex-col justify-center">
       <ProductsList products={products} />
-    </div>
+    </section>
   );
 };
 

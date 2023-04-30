@@ -4,17 +4,12 @@ import { unsetUser } from "../reducers/user/userSlice";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoReturnUpBackSharp } from "react-icons/io5";
-import { VscAccount } from "react-icons/vsc";
-// import { useState } from "react"
-// import ModalCreateProducts from "./modalProducts"
+import { BiLogOut } from "react-icons/bi";
 
 export const NavBar = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  //MODAL ADD PRODUCT
-  // const [openModal, setOpenModal] = useState(false);
-  //
   const current = useLocation();
   //Mi funcion de deslogeo
   const handleLogout = () => {
@@ -102,17 +97,25 @@ export const NavBar = () => {
   };
   return (
     <>
-      <div className="h-fit flex flex-col bg-black text-white fixed bg-casiFondo px-4 dark:bg-light z-50 w-full">
-        <div className="flex xs:items-center xs:justify-center sm:justify-around mt-1 ">
-          <h2 className="text-white text-2xl xl:text-3xl font-bold hidden sm:flex">
+      <nav className="h-fit flex flex-col bg-[#2d2d2d] text-white fixed bg-casiFondo px-4 dark:bg-light z-50 w-full">
+        <article className="flex xs:items-center xs:justify-center sm:justify-around mt-1 lg:mt-3">
+          <h2 className="text-white text-2xl xl:text-4xl font-bold hidden sm:flex">
             Shopping Cart
           </h2>
-          <p className="text-white text-base lg:text-lg">
-            Bienvenid@ {user.fullName}
-          </p>
-        </div>
-        <div className="flex xs:items-center justify-between mt-2 lg:mt-1 p-1 xs:flex-col flex-row">
-          <div className="flex flex-row xs:gap-2 gap-5 xs:mb-2">
+          <div className="flex flex-col justify-center items-center">
+            <p className="text-white text-base lg:text-lg">
+              Welcome {user.fullName}
+            </p>
+            <button
+              className="btn btn-primary text-white  rounded-md p-1 text-lg"
+              onClick={handleLogout}
+            >
+              <BiLogOut />
+            </button>
+          </div>
+        </article>
+        <article className="flex xs:items-center mt-2 lg:mt-0 p-1 flex-col">
+          <div className="flex flex-row xs:gap-2 gap-5 xs:mb-2 lg:gap-6 ">
             <button
               onClick={handleToElectro}
               className={`text-white xs:text-base sm:text-lg hover:scale-110 duration-200 ${
@@ -127,7 +130,7 @@ export const NavBar = () => {
                 current.pathname === "/catDeporte" ? "text-red-500" : ""
               }`}
             >
-              Deportes
+              Sports
             </button>
             <button
               onClick={handleToHogar}
@@ -135,7 +138,7 @@ export const NavBar = () => {
                 current.pathname === "/catHogar" ? "text-red-500" : ""
               }`}
             >
-              Hogar
+              Home
             </button>
             <button
               onClick={handleToIndumentaria}
@@ -143,7 +146,7 @@ export const NavBar = () => {
                 current.pathname === "/catIndumen" ? "text-red-500" : ""
               }`}
             >
-              Indumentaria
+              Clothes
             </button>
             <button
               onClick={goHome}
@@ -151,7 +154,7 @@ export const NavBar = () => {
                 current.pathname === "/home" ? "text-red-500" : ""
               }`}
             >
-              Inicio
+              All
             </button>
           </div>
           <div className="flex gap-5">
@@ -169,16 +172,9 @@ export const NavBar = () => {
                 <IoReturnUpBackSharp />
               )}
             </button>
-
-            <button
-              className="btn btn-primary text-white  rounded-md p-1 text-lg"
-              onClick={handleLogout}
-            >
-              <VscAccount />
-            </button>
           </div>
-        </div>
-      </div>
+        </article>
+      </nav>
     </>
   );
 };

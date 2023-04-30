@@ -39,13 +39,13 @@ const IndumentariaCategoria = () => {
   }, []);
 
   return (
-    <div className="h-full w-full bg-fondoEpic">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <section className="w-full h-full px-6 flex flex-col p-6">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 lg:gap-6 h-full my-2">
         {products.map((product) => {
           return (
             <div
               key={product.id}
-              className="bg-white flex flex-col justify-center items-center border-gray-100 border-solid border-2 w-full h-60"
+              className="bg-white flex flex-col justify-center items-center border-gray-100 border-solid border-2 w-full h-72 rounded-lg hover:scale-110 duration-200"
             >
               <div className="h-28 p-1 w-30">
                 <img
@@ -83,7 +83,7 @@ const IndumentariaCategoria = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 
