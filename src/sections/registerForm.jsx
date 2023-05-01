@@ -17,7 +17,6 @@ export const RegisterForm = (props) => {
       email: data.email,
       password: data.password,
     }).then((res) => {
-      console.log(res.data);
       props.onFormSwitch("login");
     });
   }
@@ -26,7 +25,6 @@ export const RegisterForm = (props) => {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(newData);
   }
 
   return (

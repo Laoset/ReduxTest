@@ -12,7 +12,6 @@ const HogarCategoria = () => {
   const dispatch = useDispatch();
   //Leer mi estado global y ver que productos tengo en mi carro
   const { productsList } = useSelector((state) => state.notes);
-  console.log(productsList);
 
   const handlerRemove = (productId) => {
     //Busco el producto que se necesita en mi array de products
@@ -32,9 +31,7 @@ const HogarCategoria = () => {
       "https://api-to-vercel-olive.vercel.app/api/productos/category/Hogar"
     ).then((response) => {
       const productos = response.data;
-      console.log(productos);
       setProducts(response.data);
-      console.log(response.data);
     });
   }, []);
 

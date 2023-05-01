@@ -14,9 +14,7 @@ export const TrueHome = () => {
     Axios.get("https://api-to-vercel-olive.vercel.app/api/productos").then(
       (response) => {
         const productos = response.data;
-        console.log(productos);
         setProducts(response.data);
-        console.log(response.data);
       }
     );
   }, []);

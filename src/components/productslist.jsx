@@ -9,7 +9,6 @@ export const ProductsList = ({ products }) => {
   const dispatch = useDispatch();
   //Leer mi estado global y ver que productos tengo en mi carro
   const { productsList } = useSelector((state) => state.notes);
-  console.log(productsList);
 
   const handlerRemove = (productId) => {
     //Busco el producto que se necesita en mi array de products

@@ -22,7 +22,6 @@ export const FormularioLogin = (props) => {
       (response) => {
         //Esta constante me trae todos los usuarios de mi API
         const users = response.data.users;
-        console.log(users);
         //aca busco el usuario que necesito si es que coincide su mail con mi data
         const userValidEmail = users.find(
           (user) => user.email === emailField.current.value
@@ -34,7 +33,6 @@ export const FormularioLogin = (props) => {
         if (userValidEmail && userValidPassword) {
           //Si coincide mi password con lo que tengo actualmente en el input, ingreso
           if (userValidEmail.password === passwordField.current.value) {
-            console.log("OK");
             dispatch(
               setUser({
                 email: userValidEmail.email,
