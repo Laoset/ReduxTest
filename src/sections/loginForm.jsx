@@ -42,6 +42,7 @@ export const FormularioLogin = (props) => {
             );
             //Si accede a esto le mando a la siguiente ruta:
             navigate("/home");
+            localStorage.setItem("sesion", "1");
           } else {
             alert("Contrasena incorrecta");
           }

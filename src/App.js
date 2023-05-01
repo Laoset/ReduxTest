@@ -3,9 +3,9 @@ import { NavBar } from "./sections/navBar";
 import { Cart } from "./sections/cart";
 
 //Componetes de Router
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import TrueHome from "./sections/displayProducts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RegisterForm from "./sections/registerForm";
 import ElectroCategory from "./components/electroCategory";
 import IndumentariaCategoria from "./components/indumentariaCategoria";
@@ -14,10 +14,18 @@ import DeporteCategory from "./components/deporteCategory";
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [currentForm, setCurrentForm] = useState("login");
   const toggleForm = (formName) => {
     setCurrentForm(formName);
   };
+  useEffect(() => {
+    let id = localStorage.getItem("sesion");
+    if (id) {
+      navigate("/home");
+    }
+  }, []);
+
   return (
     <div className="w-full h-full flex flex-col">
       {location.pathname === "/" ? null : (

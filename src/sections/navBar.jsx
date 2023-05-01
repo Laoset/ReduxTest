@@ -15,6 +15,7 @@ export const NavBar = () => {
   const handleLogout = () => {
     dispatch(unsetUser());
     navigate("/");
+    localStorage.removeItem("sesion");
   };
   //
   const handleToCart = () => {

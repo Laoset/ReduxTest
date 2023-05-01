@@ -28,7 +28,7 @@ const DeporteCategory = () => {
 
   useEffect(() => {
     Axios.get(
-      "https://api-to-vercel-olive.vercel.app/api/productos/category/Deportes"
+      "https://api-to-vercel-olive.vercel.app/api/productos/category/Deporte"
     ).then((response) => {
       const productos = response.data;
       setProducts(response.data);
