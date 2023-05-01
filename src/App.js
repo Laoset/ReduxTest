@@ -38,6 +38,7 @@ function App() {
       <main className="w-full h-fit bg-[#ebebeb] ">
         <Routes>
           <Route
+            exact
             path="/"
             element={
               currentForm === "login" ? (
@@ -53,6 +54,7 @@ function App() {
           <Route path="/catHogar" element={<HogarCategoria />} />
           <Route path="/catDeporte" element={<DeporteCategory />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/*" element={<h1>NO EXISTE TAL RUTA</h1>} />
         </Routes>
       </main>
     </div>
