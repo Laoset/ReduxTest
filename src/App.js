@@ -24,7 +24,8 @@ function App() {
     if (id) {
       navigate("/home");
     }
-  }, [navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="w-full h-full flex flex-col">
