@@ -13,7 +13,6 @@ export const TrueHome = () => {
   useEffect(() => {
     Axios.get("https://api-to-vercel-olive.vercel.app/api/productos").then(
       (response) => {
-        const productos = response.data;
         setProducts(response.data);
       }
     );

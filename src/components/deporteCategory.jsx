@@ -30,7 +30,6 @@ const DeporteCategory = () => {
     Axios.get(
       "https://api-to-vercel-olive.vercel.app/api/productos/category/Deporte"
     ).then((response) => {
-      const productos = response.data;
       setProducts(response.data);
     });
   }, []);

@@ -30,7 +30,6 @@ const IndumentariaCategoria = () => {
     Axios.get(
       "https://api-to-vercel-olive.vercel.app/api/productos/category/Indumentaria"
     ).then((response) => {
-      const productos = response.data;
       setProducts(response.data);
     });
   }, []);
