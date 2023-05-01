@@ -35,7 +35,7 @@ const IndumentariaCategoria = () => {
   }, []);
 
   return (
-    <section className="w-full h-full px-6 flex flex-col p-6">
+    <section className="w-full h-full px-6 flex flex-col justify-center">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 lg:gap-6 h-full my-2">
         {products.map((product) => {
           return (

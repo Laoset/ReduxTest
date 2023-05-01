@@ -98,28 +98,15 @@ export const NavBar = () => {
   };
   return (
     <>
-      <nav className="h-fit flex flex-col bg-[#2d2d2d] text-white fixed bg-casiFondo px-4 dark:bg-light z-50 w-full">
-        <article className="flex xs:items-center xs:justify-center sm:justify-around mt-1 lg:mt-3">
+      <nav className="h-fit flex flex-col  text-white  bg-casiFondo dark:bg-light z-50 w-full ">
+        <article className="flex xs:items-center xs:justify-center sm:justify-around mt-1 lg:mt-3 align-middle text-center items-center">
           <h2 className="text-white text-2xl xl:text-4xl font-bold hidden sm:flex">
             Shopping Cart
           </h2>
-          <div className="flex flex-col justify-center items-center">
-            <p className="text-white text-base lg:text-lg">
-              Welcome {user.fullName}
-            </p>
-            <button
-              className="btn btn-primary text-white  rounded-md p-1 text-lg"
-              onClick={handleLogout}
-            >
-              <BiLogOut />
-            </button>
-          </div>
-        </article>
-        <article className="flex xs:items-center mt-2 lg:mt-0 p-1 flex-col">
-          <div className="flex flex-row xs:gap-2 gap-5 xs:mb-2 lg:gap-6 ">
+          <div className="flex flex-row xs:gap-2 gap-5 xs:mb-2 lg:gap-6 flex-wrap xs:p-2 lg:p-0">
             <button
               onClick={handleToElectro}
-              className={`text-white xs:text-base sm:text-lg hover:scale-110 duration-200 ${
+              className={`text-white xs:text-base sm:text-lg hover:outline-1 hover:outline duration-200 p-1 ${
                 current.pathname === "/catElectro" ? "text-red-500" : ""
               }`}
             >
@@ -127,7 +114,7 @@ export const NavBar = () => {
             </button>
             <button
               onClick={handleToDeporte}
-              className={`text-white xs:text-base sm:text-lg hover:scale-110 duration-200 ${
+              className={`text-white xs:text-base sm:text-lg hover:outline-1 hover:outline duration-200  p-1 ${
                 current.pathname === "/catDeporte" ? "text-red-500" : ""
               }`}
             >
@@ -135,7 +122,7 @@ export const NavBar = () => {
             </button>
             <button
               onClick={handleToHogar}
-              className={`text-white xs:text-base sm:text-lg hover:scale-110 duration-200 ${
+              className={`text-white xs:text-base sm:text-lg hover:outline-1 hover:outline duration-200  p-1 ${
                 current.pathname === "/catHogar" ? "text-red-500" : ""
               }`}
             >
@@ -143,7 +130,7 @@ export const NavBar = () => {
             </button>
             <button
               onClick={handleToIndumentaria}
-              className={`text-white xs:text-base sm:text-lg hover:scale-110 duration-200 ${
+              className={`text-white xs:text-base sm:text-lg hover:outline-1 hover:outline duration-200  p-1 ${
                 current.pathname === "/catIndumen" ? "text-red-500" : ""
               }`}
             >
@@ -151,17 +138,15 @@ export const NavBar = () => {
             </button>
             <button
               onClick={goHome}
-              className={`text-white xs:text-base sm:text-lg hover:scale-110 duration-200 ${
+              className={`text-white xs:text-base sm:text-lg hover:outline-1 hover:outline duration-200  p-1 ${
                 current.pathname === "/home" ? "text-red-500" : ""
               }`}
             >
               All
             </button>
-          </div>
-          <div className="flex gap-5">
             <button
               onClick={handleToCart}
-              className="text-white  rounded-md text-lg"
+              className="text-white rounded-md text-lg  p-1 hover:outline-1 hover:outline duration-200"
             >
               {current.pathname === "/home" ||
               current.pathname === "/catElectro" ||
@@ -172,6 +157,17 @@ export const NavBar = () => {
               ) : (
                 <IoReturnUpBackSharp />
               )}
+            </button>
+          </div>
+          <div className="flex flex-col justify-center align-middle text-center items-center">
+            <p className="text-white text-base lg:text-lg">
+              Welcome {user.fullName}
+            </p>
+            <button
+              className="btn btn-primary text-white  rounded-md p-1 text-lg"
+              onClick={handleLogout}
+            >
+              <BiLogOut />
             </button>
           </div>
         </article>

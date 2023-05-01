@@ -31,11 +31,11 @@ function App() {
   return (
     <div className="w-full h-full flex flex-col">
       {location.pathname === "/" ? null : (
-        <header className="w-full h-40 bg-[#2d2d2d] ">
+        <header className=" md:h-[90px] xs:h-[110px] w-full  bg-[#232f3e]">
           <NavBar />
         </header>
       )}
-      <main className="w-full h-fit bg-[#ebebeb] ">
+      <main className="w-full h-full bg-[#ebebeb] ">
         <Routes>
           <Route
             exact
