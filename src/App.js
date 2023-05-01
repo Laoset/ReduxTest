@@ -24,6 +24,7 @@ function App() {
     if (id) {
       navigate("/home");
     }
+    console.log("good");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
