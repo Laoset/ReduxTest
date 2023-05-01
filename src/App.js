@@ -24,7 +24,7 @@ function App() {
     if (id) {
       navigate("/home");
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="w-full h-full flex flex-col">
