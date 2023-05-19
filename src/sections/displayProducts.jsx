@@ -5,9 +5,6 @@ import Axios from "axios";
 export const TrueHome = () => {
   //Creando mi estado
   const [products, setProducts] = useState([]);
-  //Estado para modificar en caso de electro
-  // const [productsElectro, setProductsElectro]= useState([])
-  //Traer cosas
 
   //Agregar algo, hacer algo cuando se cargue
   useEffect(() => {
